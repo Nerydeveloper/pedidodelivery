@@ -1,1 +1,0 @@
-Este projeto é para o aprendizado em sala de aula sobre criação de projeto com spring boot.
