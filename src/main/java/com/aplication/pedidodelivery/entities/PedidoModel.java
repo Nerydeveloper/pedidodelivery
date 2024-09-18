@@ -16,10 +16,11 @@ import java.util.List;
 public class PedidoModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "cod_pedido")
     private Long codigoPedido;
 
     @ManyToOne
-    @JoinColumn(name="codigoUsuario")
+    @JoinColumn(name="codigoUsuario", nullable = false)
     private UsuarioModel usuario;
 
     @Column(name="valorPedido")
@@ -29,7 +30,8 @@ public class PedidoModel {
     @Column(name="dataPedido")
     private Date dataPedido;
 
-    @OneToMany(mappedBy = "pedido")
+    @OneToMany(mappedBy = "pedido", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<ItemPedidoModel> itens;
+
 
 }

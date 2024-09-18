@@ -21,8 +21,10 @@ public class ProdutoModel {
 
     @Column(name = "nomeProduto", nullable = false, length = 100)
     private String nomeProduto;
+
     @Column(name = "descricaoProduto", length = 255)
     private String descricaoProduto;
+
     @Column(name = "precoProduto", nullable = false)
     private Double precoProduto;
 
